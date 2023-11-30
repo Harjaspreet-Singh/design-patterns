@@ -1,6 +1,5 @@
 package com.designpattern.visitor;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +39,7 @@ public class FamilyVisitorClient {
     }
 
     // the Family class that implements FamilyElement
-    static class Family implements FamilyElement {
+    public static class Family implements FamilyElement {
         private final List<FamilyElement> elements;
 
         public Family() {
@@ -67,7 +66,7 @@ public class FamilyVisitorClient {
     }
 
     // the FamElementPrintVisitor class that implements FamilyElementVisitor
-    static class FamElementPrintVisitor implements FamilyElementVisitor {
+    public static class FamElementPrintVisitor implements FamilyElementVisitor {
         public void visit(Parents parents) {
             System.out.println("Visiting Parents");
         }
@@ -85,22 +84,3 @@ public class FamilyVisitorClient {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

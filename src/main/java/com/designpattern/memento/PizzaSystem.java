@@ -7,7 +7,7 @@ import java.util.List;
 public class PizzaSystem {
 
     // Memento class representing the state of a pizza.
-    private static class PizzaName {
+    public static class PizzaName {
         private String pizzaName;
         private int freshnessLevel;
 
@@ -26,7 +26,7 @@ public class PizzaSystem {
     }
 
     // Originator class representing the life of a pizza.
-    private static class PizzaLife {
+    public static class PizzaLife {
         private String pizzaName;
         private int freshnessLevel;
 
@@ -53,19 +53,18 @@ public class PizzaSystem {
     }
 
     // Caretaker class managing the history of pizza states.
-    private static class FreshnessHistory {
-        private List<PizzaName> pizzaNames = new ArrayList<>();
+    public static class FreshnessHistory {
+        private static List<PizzaName> pizzaNames = new ArrayList<>();
 
-        public void save(PizzaName name) {
+        public static void save(PizzaName name) {
             pizzaNames.add(name);
         }
 
-        public PizzaName undo() {
+        public static PizzaName undo() {
             if (pizzaNames.isEmpty()) {
                 return null;
             }
             return pizzaNames.remove(pizzaNames.size() - 1);
         }
     }
-
 }

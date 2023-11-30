@@ -1,70 +1,56 @@
 package com.designpattern.decorator;
 
-public class decoratorExample{
-//Component Interface
-interface PizzaOption{
-    void assemble();
-}
+public class DecoratorExample {
 
-class basicPizza implements PizzaOption{
-    @Override
-    public void assemble(){
-        System.out.println("Assembling a simple Pizza");
-    }
-}
-
-abstract class PizzaDecorator implements PizzaOption{
-    protected PizzaOption decoratedPizza;
-
-    public PizzaDecorator(PizzaOption nonvegpizza){
-        this.decoratedPizza = nonvegpizza;
+    // Component Interface
+    public interface PizzaOption {
+        void assemble();
     }
 
-    @Override
-
-    public void assemble(){
-        decoratedPizza.assemble();
-    }
-}
-
-
-
-//Concrete decorator 1
-
-class Pepperoni extends PizzaDecorator{
-    public Pepperoni(PizzaOption nonvegpizza){
-        super(nonvegpizza);
+    public static class BasicPizza implements PizzaOption {
+        @Override
+        public void assemble() {
+            System.out.println("Assembling a simple Pizza");
+        }
     }
 
-    @Override
-    public void assemble(){
-        super.assemble();
-        System.out.println("Adding pepperoni to the Pizza");
-    }
-}
+    public static abstract class PizzaDecorator implements PizzaOption {
+        protected PizzaOption decoratedPizza;
 
+        public PizzaDecorator(PizzaOption pizza) {
+            this.decoratedPizza = pizza;
+        }
 
-//Concrete decorator 2
-class baconCrumble extends PizzaDecorator{
-    public baconCrumble(PizzaOption nonvegpizza){
-        super(nonvegpizza);
-
+        @Override
+        public void assemble() {
+            decoratedPizza.assemble();
+        }
     }
 
-    @Override
-    public void assemble(){
-    super.assemble();
-    System.out.println("Adding bacon crumble to the Pizza");
+    // Concrete decorator 1
+    public static class Pepperoni extends PizzaDecorator {
+        public Pepperoni(PizzaOption pizza) {
+            super(pizza);
+        }
 
+        @Override
+        public void assemble() {
+            super.assemble();
+            System.out.println("Adding pepperoni to the Pizza");
+        }
+    }
+
+    // Concrete decorator 2
+    public static class BaconCrumble extends PizzaDecorator {
+        public BaconCrumble(PizzaOption pizza) {
+            super(pizza);
+        }
+
+        @Override
+        public void assemble() {
+            super.assemble();
+            System.out.println("Adding bacon crumble to the Pizza");
+        }
     }
 
 }
-}
-
-
-
-
-
-
-
-

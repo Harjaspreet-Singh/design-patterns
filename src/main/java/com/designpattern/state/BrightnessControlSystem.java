@@ -4,7 +4,7 @@ package com.designpattern.state;
 public class BrightnessControlSystem {
 
     // Context class managing the state of brightness.
-    private static class Brightness {
+    public static class Brightness {
         // Private variable to store the current state.
         private State state;
 
@@ -30,7 +30,7 @@ public class BrightnessControlSystem {
     }
 
     // Interface declaring a method for handling requests.
-    private interface State {
+    private static interface State {
         void handleRequest(Brightness brightness);
     }
 
