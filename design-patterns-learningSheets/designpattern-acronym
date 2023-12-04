@@ -1,0 +1,16 @@
+B.S.C  = Behavioural.Structural.Creational
+
+
+  
+  S.A.P.B.F.L                             A.B.C.D.F.F.P                  V.I.C.T.I.M  M.O.S.S.C
+  Singelton                               Adapter                        Visitor
+  Abstract Factory                        Bridge                         Iterator
+  Prototype                               Composite                      Command
+  Builder                                 Decorator                      Intepretor
+  Factory Method                          Flyweight                      Memento
+  Lazy Initilazation                      Facade
+                                          Proxy                          Mediator
+                                                                         Observer
+                                                                         State
+                                                                         Strategy
+                                                                         Chain of Responsebility
